@@ -7,9 +7,12 @@ contract Election {
 		string name;
 		uint voteCount;
 	}
+	
 	// Store candidate
+
 	// Fetch candidate
 	mapping(uint => Candidate) public candidates;
+
 	// Store candidates count
 	uint public candidatesCount;
 
