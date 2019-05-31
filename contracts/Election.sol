@@ -7,7 +7,7 @@ contract Election {
 		string name;
 		uint voteCount;
 	}
-	
+
 	// Store candidate
 
 	// Fetch candidate
@@ -16,9 +16,15 @@ contract Election {
 	// Store candidates count
 	uint public candidatesCount;
 
-	function ElectionCandidates () public {
+	// Constructor
+	// function Election() public {
+	// 	addCandidate("Candidate 1");
+	// 	addCandidate("Candidate 2");
+	// }
+
+	constructor() public {
 		addCandidate("Candidate 1");
-		addCandidate("Candidate 2");
+		addCandidate("Candidate 2");	
 	}
 
 	function addCandidate (string memory _name) private {
@@ -26,3 +32,17 @@ contract Election {
 		candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
 	}
 }
+
+
+
+// function Inbox(string initialMessage) public {
+//     message = initialMessage;
+// }
+
+// NOW...
+
+// constructor(string initialMessage) public {
+//     message = initialMessage;
+// }
+
+
