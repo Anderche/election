@@ -10,6 +10,9 @@ contract Election {
 
 	// Store candidate
 
+	// Fetch accounts that have voted
+	mapping(address => bool) public voters;
+
 	// Fetch candidate
 	mapping(uint => Candidate) public candidates;
 
@@ -31,18 +34,13 @@ contract Election {
 		candidatesCount ++;
 		candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
 	}
+
+	function vote (uint _candidateId) public {
+		// record that voter has voted, by reading account out the mapping declared above
+		voters[msg.sender] = true;
+
+		// update candidate vote Count
+		candidates[_candidateId].voteCount ++;
+	}
+
 }
-
-
-
-// function Inbox(string initialMessage) public {
-//     message = initialMessage;
-// }
-
-// NOW...
-
-// constructor(string initialMessage) public {
-//     message = initialMessage;
-// }
-
-
