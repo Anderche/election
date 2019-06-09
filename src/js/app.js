@@ -1,4 +1,4 @@
-App = {
+git pApp = {
   web3Provider: null,
   contracts: {},
   account: '0x0',
